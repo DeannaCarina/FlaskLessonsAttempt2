@@ -23,6 +23,7 @@ Working with Heroku in the CLI:
     3. (In CLI) heroku apps [to list all of the apps in Heroku account]
     4. (In CLI) heroku apps:rename {new-app-name} --app {old-app-name}
     5. (In CLI) git push -u heroku main [to push changes to heroku]
+    6. (In CLI) git remote rm heroku
     
 To create a requirements.txt with updated needs:
     1. pip3 freeze --local > requirements.txt    
