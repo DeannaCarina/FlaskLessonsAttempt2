@@ -16,3 +16,10 @@ Importing template from STARTBOOTSTRAP:
     5. (In CLI) unzip gh-pages.zip [to unzip the file]
     6. (In CLI) cd - [to go back to main directory]
 
+Working with Heroku in the CLI:
+
+    1. (In CLI) npm install -g heroku
+    2. (In CLI) heroku login -i
+    3. (In CLI) heroku apps [to list all of the apps in Heroku account]
+    4. (In CLI) heroku apps:rename {new-app-name} --app {old-app-name}
+    

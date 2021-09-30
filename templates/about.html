@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="row">
-    <div class="col-md-9 col-sm-10 col-11">
-        <h2>About us</h2>
+
+
+
+
+<div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+
+        
+
+        <h2>{{ page_title }}</h2>
         <p>
             Thorin and Company were a group of thirteen Dwarves, the Wizard Gandalf, and the Hobbit Bilbo Baggins, led by
             Thorin Oakenshield in TA 2941. Their purpose was to regain the lost Dwarven kingdom of the Lonely Mountain from
@@ -16,304 +23,48 @@
             rash action. The superstitious Dwarves also considered thirteen to be an unlucky number, and as Gandalf had
             planned to leave on other business, welcomed a fourteenth to fill into their party.
         </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Thorin Oakenshield</h3>
-        <p>
-            Thorin II was born in TA 2746 to Dwarven prince Thráin II in the city of The Lonely Mountain. Early in
-            his youth, he and the other Dwarves of the Lonely Mountain were forced to flee by the dragon Smaug in TA
-            2770. While in exile, he quickly grew to become a capable warrior. This was demonstrated when he
-            participated in the Battle of Azanulbizar in TA 2799. He fought with one of the Dwarven armies beneath
-            the East-gate of Moria. At some point in the fighting, his shield broke, and using an oaken tree branch
-            found on the floor as a shield, he gained the epithet "Oakenshield," which would remain with him even in
-            death.
 
-            Thorin eventually became King-in-Exile of Durin's Folk after his father went missing, and died in the
-            dungeons of Dol Guldur.
-        </p>
-    </div>
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/e/ec/1400193_695248260488487_320403599_o.jpg" alt="Thorin Oakenshield">
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/b/b4/The-Hobbit-Fili-and-Kili.jpg" alt="Fili and Kili">
-        </p>
-    </div>
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Fíli and Kíli </h3>
-        <p>
-            Fíli and Kíli were brothers, the youngest of the thirteen dwarves who set out with Thorin Oakenshield's
-            company, along with Gandalf and Bilbo Baggins, to reclaim the Lonely Mountain from the dragon Smaug.
+{% for member in company %}
 
-            Fíli and Kíli were the two most active dwarves of Thorin's company, and apart from Balin, and possibly
-            Bombur, they appeared more frequently as "individual" characters in Tolkien's novel than the rest of
-            Thorin's companions, who were most often named only in "group" references to the entire company.
 
-            Fíli and Kíli were nephews of Thorin, who was the elder brother of their mother Dís. They were also nephews
-            of Frerin, grandsons of Thráin II, and great-grandsons of Thrór. Fíli's most distinguishing feature was his
-            long nose, the longest of any of the Dwarves in Thorin's company.
+<div class="container-fluid">
+    <div class="row featurette">
 
-            As the youngest Dwarves, Fíli and Kíli had the sharpest eyes, and were often sent scouting or searching. It
-            was they that found the Front Porch while in the Misty Mountains.
+        {% if loop.index % 2 != 0 %}
 
-            With the other Dwarves, Fíli and Kíli encountered spiders and were later imprisoned by the Elvenking
-            Thranduil. They escaped the cells thanks to Bilbo, traveling down the river in barrels until they reached
-            Lake-town. The brothers accompanied Thorin and Bilbo to Lake-town while the others rested by the
-            river.
+        <div class="col-md-7 col-sm-8 col-9">
+            <h3><a href="/about/{{  member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
+            <p>{{ member.description }}</p>
+        </div>
+        <div class="col-md-5 col-sm-8 col-9">
+            <p><img src="{{ member.image_source }}" alt="{{ member.name }}"></p>
+        </div>
 
-            At the feet of the Lonely Mountain, Fíli and Kíli scouted Ravenhill and found the Front Gate with Balin and
-            Bilbo. Also, with Bilbo, they found the side-door leading into the mountain.
+        {% else %} 
+        
+        <div class="col-md-5 col-sm-8 col-9">
+            <p><img src="{{ member.image_source }}" alt="{{ member.name }}"></p>
+        </div>
+        <div class="col-md-7 col-sm-8 col-9">
+            <h3><a href="/about/{{  member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
+            <p>{{ member.description }}</p>
+        </div>
 
-            Both brothers were killed while defending the mortally wounded Thorin Oakenshield in the Battle of Five
-            Armies, and all three were buried with honor.
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Óin</h3>
-        <p>
-            Óin was the older brother of Glóin, cousin of Dwalin and Balin, and uncle of Gimli. Óin's uncle was Fundin,
-            the father of Balin and Dwalin. He usually wore a brown-hooded cloak when travelling. Óin fought in the
-            Battle of Azanulbizar along with Thorin Oakenshield, and in TA 2941 joined with Thorin and Company on the
-            quest to reclaim the Lonely Mountain wearing a brown hood.[2] Óin was one of the Dwarves who bet that Bilbo
-            would come along with them to reclaim the Lonely Mountain. Óin and his brother Glóin were usually in charge
-            of preparing the fire for the Company as they were the most skilled out of the others. He fought in and
-            survived the Battle of Five Armies, and later settled in the Lonely Mountain with King Dáin II Ironfoot,
-            along with many other dwarves of The Company of Thorin.
-        </p>
-    </div>
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/2/20/Oin_2.jpg" alt="Óin">
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/f/fc/Gloin_2.jpg" alt="Gloin">
-        </p>
-    </div>
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Gloin</h3>
-        <p>
-            In TA 2941, Glóin and his brother Óin, along with his cousins Dwalin and Balin, were among the Dwarves
-            accompanying Thorin and Company during their quest to the Lonely Mountain to recapture The Kingdom of Erebor
-            from the Dragon Smaug. He was noted for his skills with a tinderbox, and, along with his brother Óin, was
-            usually the one told to get a fire started whenever the Dwarves made camp. Gloin also fought in the Battle
-            of the Five Armies.[1] After the battle, he made his home in the Lonely Mountain.
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Balin</h3>
-        <p>
-            Balin was a Dwarf leader, the son of Fundin, and elder brother of Dwalin. He was one of the thirteen Dwarves
-            who accompanied Thorin II Oakenshield on the quest to regain the Lonely Mountain.
+        {% endif %}
 
-            A Dwarf Lord known for his wise counsel and willingness to listen, he was one of Thorin's closest friends
-            and advisers. Balin was distantly related to him, and a descendant of the noble House of Durin.
+    </div>
+</div>    
 
-            He later went to re-establish the Dwarf presence in Moria, but within five years it was overcome once more
-            by Orcs, and he was killed there along with the rest of his companions.
-        </p>
-    </div>
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/5/52/Balin.jpg" alt="Balin">
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/1/1c/Dwalin.jpg" alt="Dwalin">
-        </p>
-    </div>
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Dwalin</h3>
-        <p>
-            Dwalin was the first Dwarf to arrive, alone, at Bag End when the unexpected party planned by Thorin and
-            Gandalf began at Bilbo Baggins' hobbit hole. He was wearing a dark-green hood and a golden belt, his tucked
-            into the belt and walked in as if expected, which greatly surprised Bilbo. Soon Balin arrived and he and
-            Dwalin sat talking while Bilbo kept answering the door for the arrival of more and more Dwarves. Later, when
-            Bilbo griped aloud in his kitchen about the lack of help in setting out refreshments, Dwalin and Balin were
-            the first (followed by Fíli and Kíli) to lend a hand. Later still, when the Dwarves filled Bag End with
-            music, Dwalin played on a viol as big as himself.[1] Dwalin lent a green hood and cloak to Bilbo when they
-            set out on their journey.
+    {% if loop.index != loop.length %}
 
-            After Thorin's Company reclaimed the mountain from Smaug, Dwalin fought alongside his companions in the
-            Battle of Five Armies. He survived the battle, and later received his fourteenth share of Smaug's hoard. He
-            chose to live afterwards in Erebor under the rule of Dáin II Ironfoot, Thorin's cousin and now King under
-            the Mountain.
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Ori</h3>
-        <p>
-            Ori was one of the several Dwarves that accompanied Balin to Moria in TA 2989 to begin a colony there.
-            Though it saw initial success, the colony was destroyed in TA 2994 when the Balrog ( Durin's Bane) and Orcs
-            began to press back from the initial fight. After Balin died, Ori and others lived just long enough to bury
-            him properly in a stone tomb before dying themselves in the last stand in the Chamber of Mazarbul. Ori
-            recalls his last moments in The Book of Mazarbul which Gandalf reads from when the Fellowship passes by
-            Balin's Tomb some twenty-four years later. His body is left clutching the scarred, bloodied, and shredded
-            book; a warrior-scribe to the last breath.[4][5][6]
-        </p>
-    </div>
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/8/81/Ori.jpeg" alt="Ori">
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/8/89/Dori-markhadlow-p.jpg" alt="Dori">
-        </p>
-    </div>
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Dori</h3>
-        <p>
-            It fell to Dori to carry Bilbo Baggins in the tunnels of the Misty Mountains during the escape from the
-            Goblins, but Dori dropped Bilbo, and the other Dwarves and Gandalf blamed him for "losing their burglar."
-            Later, during their escape from the Wargs and Orcs, Dori helped Bilbo climb a tree to get away from the
-            wargs. Bilbo shortly thereafter saved Dori by grabbing his legs as they were rescued by the Great Eagles and
-            taken to their eyrie from the Misty Mountains. When Gandalf tells their tale to the skin-changer Beorn and
-            brings forward the company, Dori came first, along with Thorin.
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Nori</h3>
-        <p>
-            In TA 2941, Nori, along with Dori and Ori, became part of Thorin and Company, befriending Bilbo Baggins and
-            traveling with him in search of Smaug's treasure in the Lonely Mountain. After their experience in
-            Goblin-town when the company was pursued by Wargs and Orcs and forced to climb up into some trees, Nori was
-            the first realize that Bilbo had been left on the ground and pointed him out to his brother Dori who rescued
-            Bilbo.
+        <hr class="featurette-divider">
+    
+    {% endif %}
 
-            Nori did little to distinguish himself during the Dwarves's adventures in the wild, though he shared the
-            same array of experiences as the others of the Company: captured in turn by Trolls, Goblins, Spiders, and
-            Elves, they eventually reached the distant Lonely Mountain and recovered it for Durin's Folk. Afterwards he
-            remained in the Kingdom under the Mountain, and Glóin reported that he was still there seventy-seven years
-            later, at the time of the War of the Ring.
-        </p>
-    </div>
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/d/db/Nori-jedbrophy-p.jpg" alt="Nori">
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/b/b5/Bifur.jpg" alt="Bifur">
-        </p>
-    </div>
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Bifur</h3>
-        <p>
-            Answering Thorin Oakenshield's Quest of Erebor, he went to the meeting at Bag End with his cousins Bofur and
-            Bombur, where he played the clarinet. On the quest, he was nearly cooked on a spit by trolls and nearly
-            killed by Goblins, Wargs, Stone giants, Great Spiders, and the dragon Smaug himself. A valiant and brave
-            warrior, Bifur never gave up, and fought in the Battle of Five Armies with all his strength, killing
-            numerous enemies. In the fallout of the great battle, Dáin II Ironfoot gave him his share of the treasure,
-            and he retired to live at the Lonely Mountain.[1]
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Bofur</h3>
-        <p>
-            Bofur's heritage is unclear, but he was not of Durin's Folk. He and his family hailed from the Blue
-            Mountains. As such, they felt less strongly about the quest to reclaim the Lonely Mountain from the dragon
-            Smaug, with more interest in adventure for its own sake.[citation needed]
+{% endfor %}
 
-            While answering Thorin Oakenshield's quest to Erebor, Bofur went to the meeting at Bag End with his brother
-            Bombur and cousin Bifur. He accompanied Thorin, Gandalf, Bilbo Baggins, and rest of Thorin's Company across
-            Wilderland to the Lonely Mountain in order to reclaim the dwarves' treasure from the dragon Smaug. Following
-            the dragon's demise, Bofur participated in and survived the Battle of Five Armies, receiving his fourteenth
-            share of the treasure as agreed upon.[1]
-        </p>
-    </div>
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/7/77/Bofur.jpg" alt="Bofur">
-        </p>
-    </div>
 </div>
-<div class="row featurette">
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/5/5f/Bombur-stephenhunter-p.jpg" alt="Bombur">
-        </p>
-    </div>
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Bombur</h3>
-        <p>
-            Bombur was the twelfth Dwarf arriving at Bag End to attend the meeting arranged by Gandalf, where the quest
-            to reclaim Erebor began. Because he was commonly considered to count for two dwarves due to his girth, he
-            was the last to arrive at Beorn's house and the last to cross the Enchanted stream in Mirkwood. Bombur
-            tumbled with Bifur and Bofur onto Thorin when they first entered Bag End. He chose to stay and guard the
-            camp and supplies while the others moved up the Lonely Mountain, because he trusted neither mountain paths
-            nor ropes to stay intact under his weight. However, he was later forced to use the ropes to escape the
-            rampaging dragon Smaug before he could be slain.
-        </p>
-    </div>
 </div>
-<div class="row featurette">
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Bilbo</h3>
-        <p>
-            Bilbo Baggins was a hobbit of the Shire, the main protagonist of The Hobbit and a secondary character in The
-            Lord of the Rings.
 
-            Gandalf suggested to Thorin and Company that they hire Bilbo Baggins to be their burglar in the Quest of
-            Erebor, and later fought in the Battle of Five Armies. Bilbo was also one of the bearers of the One Ring,
-            and the first to voluntarily give it up, although with some difficulty. He wrote many of his adventures in a
-            book he called There and Back Again. Bilbo adopted his second-cousin-once-removed Frodo Baggins to be his
-            heir after his parents, Drogo Baggins and Primula Brandybuck, drowned in the Brandywine River.
-
-            Bilbo was the first hobbit to become famous in the world at large, and one of the few to set foot in the
-            Undying Lands.
-        </p>
-    </div>
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/b/b6/The_Hobbit_wallpaper_48.jpg" alt="Bilbo">
-        </p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-4 col-sm-8 col-9">
-        <p>
-            <img src="https://static.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg" alt="Gandalf">
-        </p>
-    </div>
-    <div class="col-md-6 col-sm-8 col-9">
-        <h3>Gandalf</h3>
-        <p>
-            Gandalf the Grey, later known as Gandalf the White, and originally named Olórin, was an Istar (Wizard),
-            dispatched to Middle-earth in the Third Age to combat the threat of Sauron. He joined Thorin and his company
-            to reclaim the Lonely Mountain from Smaug, convoked the Fellowship of the Ring to destroy the One Ring, and
-            led the Free Peoples in the final campaign of the War of the Ring.
-        </p>
-    </div>
-</div>
 
 {% endblock %}    
